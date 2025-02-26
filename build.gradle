@@ -21,7 +21,7 @@ group = mod_group_id
 version = mod_version
 
 base {
-    archivesName = mod_id
+    archivesName = mod_id+"-1.19.x-1.20.x-Forge"
 }
 
 java {
@@ -144,8 +144,8 @@ dependencies {
     // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    implementation fg.deobf("curse.maven:corpse-316582:3829457")
-    implementation fg.deobf("curse.maven:cosmetic-armor-reworked-237307:4016730")
+    implementation fg.deobf("curse.maven:corpse-316582:5816905")
+    implementation fg.deobf("curse.maven:cosmetic-armor-reworked-237307:4016732")
 
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
