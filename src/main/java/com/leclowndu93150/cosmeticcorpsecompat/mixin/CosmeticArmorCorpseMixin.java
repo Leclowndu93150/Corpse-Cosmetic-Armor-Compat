@@ -1,6 +1,7 @@
 package com.leclowndu93150.cosmeticcorpsecompat.mixin;
 
 import com.leclowndu93150.cosmeticcorpsecompat.CosmeticArmorDeathEventHandler;
+import de.maxhenkel.corpse.gui.CorpseContainerBase;
 import lain.mods.cos.api.CosArmorAPI;
 import lain.mods.cos.api.inventory.CAStacksBase;
 import de.maxhenkel.corpse.entities.CorpseEntity;
@@ -34,6 +35,10 @@ public abstract class CosmeticArmorCorpseMixin {
     private void transferItemsToCosmeticArmor(CallbackInfo ci) {
         Object container = this;
         if (!cachedPlayer.isAlive()) return;
+
+        if(!((CorpseContainerBase) container).isEditable()) {
+            return;
+        }
 
         UUID playerUUID = cachedPlayer.getUUID();
         CAStacksBase cosArmorInventory = CosArmorAPI.getCAStacks(playerUUID);
